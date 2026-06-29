@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Loan Department" parallel="tests" thread-count="6">
+		<listeners>
+		<listener class-name="TestNGFramework.Listeners"/>
+		</listeners>
+	<paremeter name="URL" value="qaclickacademy.com"/>  
+	<paremeter name="APIKey/usrname" value="12345"/> 
+
+	<test name="Personal Loan" parallel="classes" thread-count="6">
+		<paremeter name="URL" value="personalloan.com"/>
+		<classes>
+		
+			<class name="TestNGFramework.day0"> 
+				<methods>
+					<include name ="SecondTest"/>
+				</methods>	
+			</class>
+			
+			<class name="TestNGFramework.day1" />
+			<class name="TestNGFramework.day2" /> 
+		</classes>	
+	</test> 
+	
+	<test name="Car Loan">
+
+		<classes>
+		
+			<class name="TestNGFramework.day3">
+				<methods>
+					<exclude name ="MobileLoginHomeLoan"/>
+					<!--<exclude name ="API.*"/>-->
+				</methods>
+			</class>
+			
+		</classes>
+	</test>
+	
+</suite> <!-- Suite -->
